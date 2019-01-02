@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import PhotoListView from '../views/PhotoListView';
+import NavBar from './NavBar';
 
 export default class App extends Component {
   render() {
     return (
-      <PhotoListView />
+      <div>
+        <NavBar/>
+        <PhotoListView />
+      </div>
     );
   }
 }
