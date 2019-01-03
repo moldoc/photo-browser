@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 
 const PhotoList = (props) => {
   return props.photos && props.photos.length ? (
-    <div className="photo-list">
-      {props.photos.map(photo => (
-        <div className="photo-list-item">
-          <img src={photo.thumbnailUrl} alt={photo.id} className="image"/>
-          <div className="overlay">
-            <div className="title">{photo.title}</div>
+    <div className="container bg-light">
+      <div className="photo-list">
+        {props.photos.map(photo => (
+          <div className="photo-list-item">
+            <img src={photo.thumbnailUrl} alt={photo.id} className="image"/>
+            <div className="overlay">
+              <div className="title">{photo.title}</div>
+            </div>
           </div>
         </div>
       ))}
