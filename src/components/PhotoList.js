@@ -12,10 +12,15 @@ const PhotoList = (props) => {
               <div className="title">{photo.title}</div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  ): <div>Loading...</div>;
+  ):
+    <div className="container">
+      <div className="spinner-border text-success loading" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    </div>
 };
 
 const mapStateToProps = state => ({
