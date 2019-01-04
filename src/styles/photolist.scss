@@ -40,6 +40,12 @@
       padding-left: 5px;
       padding-right: 5px;
     }
+
+    .view-button {
+      font-size: 10px;
+      padding: 2px;
+      margin-top: 8px;
+    }
   }
 }
 
@@ -47,5 +53,14 @@
   position:fixed;
   top: 50%;
   left: 50%;
+}
+
+.photo-modal {
+  min-width: 632px;
+  max-width: 632px;
+
+  .modal-header {
+    display: inline;
+  }
 }
 

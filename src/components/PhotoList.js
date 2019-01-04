@@ -1,17 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PhotoListItem from './PhotoListItem';
 
 const PhotoList = (props) => {
   return props.photos && props.photos.length ? (
     <div className="container bg-light">
       <div className="photo-list">
         {props.photos.map(photo => (
-          <div className="photo-list-item">
-            <img src={photo.thumbnailUrl} alt={photo.id} className="image"/>
-            <div className="overlay">
-              <div className="title">{photo.title}</div>
-            </div>
-          </div>
+          <PhotoListItem
+            id={photo.id}
+            title={photo.title}
+            url={photo.url}
+            thumbnailUrl={photo.thumbnailUrl}
+          />
         ))}
       </div>
     </div>
