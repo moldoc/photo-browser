@@ -16,8 +16,9 @@
 
     .overlay {
       opacity: 0;
-      top: 40%;
+      top: 25%;
       position: absolute;
+      text-align: center;
     }
 
     &:hover {
@@ -35,8 +36,7 @@
       font-size: 10px;
       color: black;
       opacity: 1;
-      text-align: center;
-      width: 140px;
+      width: 150px;
       padding-left: 5px;
       padding-right: 5px;
     }
