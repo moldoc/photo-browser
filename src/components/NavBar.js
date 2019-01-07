@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => (
   <section className="jumbotron text-center nav-container">
@@ -9,8 +10,8 @@ const NavBar = () => (
       Browse photos and albums, click a photo to see it in full size and to share its url.
     </p>
     <nav className="nav nav-pills nav-fill">
-      <a className="nav-item nav-link" href="#">Albums</a>
-      <a className="nav-item nav-link active" href="#">Photos</a>
+      <NavLink className="nav-item nav-link" to="/albums">Albums</NavLink>
+      <NavLink className="nav-item nav-link" to="/photos">Photos</NavLink>
       <a className="nav-item nav-link" href="#">Users</a>
     </nav>
   </section>
