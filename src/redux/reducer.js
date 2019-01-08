@@ -7,6 +7,7 @@ import * as actions from './actions';
 const initialState = {
   photos: [],
   albums: [],
+  users: [],
   error: null
 };
 
@@ -27,6 +28,15 @@ export default handleActions({
   [actions.fetchAlbumsSuccess]: (state, action) => ({
     ...state,
     albums: action.payload,
+    error: null
+  }),
+  [actions.fetchUsersRequest]: (state, action) => ({
+    ...state,
+    error:null
+  }),
+  [actions.fetchUsersSuccess]: (state, action) => ({
+    ...state,
+    users: action.payload,
     error: null
   })
   },

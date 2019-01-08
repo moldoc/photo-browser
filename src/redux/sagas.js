@@ -22,6 +22,25 @@ function* fetchAlbumsRequest() {
   }
 }
 
+function* fetchUsersRequest() {
+  try {
+    const response = yield call(axios.get, [`${URL}users`]);
+    yield put(actions.fetchUsersSuccess(response.data));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function* fetchUsersAndAlbums() {
+  try {
+    yield all([
+      call(fetchUsersRequest),
+      call(fetchAlbumsRequest)
+    ]);
+  } catch (error) {
+    console.log(error);
+  }
+}
 function* watchFetchPhotosRequest() {
   yield takeEvery(
     actions.fetchPhotosRequest().type,
@@ -36,9 +55,25 @@ function* watchFetchAlbumsRequest() {
   )
 }
 
+function* watchFetchUsersRequest() {
+  yield takeEvery(
+    actions.fetchUsersRequest().type,
+    fetchUsersRequest
+  )
+}
+
+function* watchFetchUsersAndAlbums() {
+  yield takeEvery(
+    actions.fetchUsersAndAlbums().type,
+    fetchUsersAndAlbums
+  )
+}
+
 export default function* rootSaga() {
   yield all([
     watchFetchPhotosRequest(),
-    watchFetchAlbumsRequest()
+    watchFetchAlbumsRequest(),
+    watchFetchUsersRequest(),
+    watchFetchUsersAndAlbums()
   ]);
 }

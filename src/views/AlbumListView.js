@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAlbumsRequest } from '../redux/actions';
+import { fetchUsersAndAlbums } from '../redux/actions';
 import AlbumList from '../components/AlbumList';
 
 class AlbumListView extends Component {
   constructor(props) {
     super(props);
 
-    this.props.fetchAlbumsRequest();
+    this.props.fetchUsersAndAlbums();
   }
 
   render() {
@@ -22,7 +22,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchAlbumsRequest
+  fetchUsersAndAlbums
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumListView);
