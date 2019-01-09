@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { fetchPhotosRequest } from '../redux/actions';
 import PhotoList from '../components/PhotoList';
 
+const URL = 'https://jsonplaceholder.typicode.com/';
+
 class PhotoListView extends Component {
   constructor(props) {
     super(props);
 
-    this.props.fetchPhotosRequest();
+    this.props.fetchPhotosRequest({request_url : `${URL}photos?_page=1&_limit=24`});
   }
 
   render() {

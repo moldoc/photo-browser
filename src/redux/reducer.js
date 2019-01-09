@@ -8,6 +8,7 @@ const initialState = {
   photos: [],
   albums: [],
   users: [],
+  pagination: {},
   error: null
 };
 
@@ -18,7 +19,8 @@ export default handleActions({
   }),
   [actions.fetchPhotosSuccess]: (state, action) => ({
     ...state,
-    photos: action.payload,
+    photos: state.photos.concat(action.payload.photos),
+    pagination: action.payload.pagination,
     error: null
   }),
   [actions.fetchAlbumsRequest]: (state, action) => ({

@@ -1,13 +1,17 @@
 import { put, call, all, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import * as actions from './actions';
+import parse from 'parse-link-header';
 
 const URL = 'https://jsonplaceholder.typicode.com/';
 
-function* fetchPhotosRequest() {
+function* fetchPhotosRequest(action) {
   try {
-    const response = yield call(axios.get, [`${URL}photos?_page=7&_limit=24`]);
-    yield put(actions.fetchPhotosSuccess(response.data));
+    const response = yield call(axios.get, [action.payload.request_url]);
+    const header = response.headers.link;
+    const parsed = parse(header);
+    const data = { photos: response.data, pagination: parsed } ;
+    yield put(actions.fetchPhotosSuccess(data));
   } catch (error) {
     console.log(error);
   }
