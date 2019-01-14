@@ -23,6 +23,10 @@ export default handleActions({
     pagination: action.payload.pagination,
     error: null
   }),
+  [actions.fetchPhotosFailure]: (state, action) => ({
+    ...state,
+    error: action.payload
+  }),
   [actions.fetchAlbumsRequest]: (state, action) => ({
     ...state,
     error: null
@@ -32,6 +36,10 @@ export default handleActions({
     albums: action.payload,
     error: null
   }),
+  [actions.fetchAlbumsFailure]: (state, action) => ({
+    ...state,
+    error: action.payload
+  }),
   [actions.fetchUsersRequest]: (state, action) => ({
     ...state,
     error:null
@@ -40,6 +48,10 @@ export default handleActions({
     ...state,
     users: action.payload,
     error: null
+  }),
+  [actions.fetchUsersFailure]: (state, action) => ({
+    ...state,
+    error: action.payload
   })
   },
   initialState

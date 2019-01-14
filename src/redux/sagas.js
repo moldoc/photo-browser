@@ -13,7 +13,7 @@ function* fetchPhotosRequest(action) {
     const data = { photos: response.data, pagination: parsed } ;
     yield put(actions.fetchPhotosSuccess(data));
   } catch (error) {
-    console.log(error);
+    yield put(actions.fetchPhotosFailure(error));
   }
 }
 
@@ -22,7 +22,7 @@ function* fetchAlbumsRequest() {
     const response = yield call(axios.get, [`${URL}albums`]);
     yield put(actions.fetchAlbumsSuccess(response.data));
   } catch (error) {
-    console.log(error);
+    yield put(actions.fetchAlbumsFailure(error));
   }
 }
 
@@ -31,7 +31,7 @@ function* fetchUsersRequest() {
     const response = yield call(axios.get, [`${URL}users`]);
     yield put(actions.fetchUsersSuccess(response.data));
   } catch (error) {
-    console.log(error);
+    yield put(actions.fetchUsersFailure(error));
   }
 }
 
