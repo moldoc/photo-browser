@@ -13,10 +13,6 @@ const initialState = {
 };
 
 export default handleActions({
-  [actions.fetchPhotosRequest]: (state, action) => ({
-    ...state,
-    error: null
-  }),
   [actions.fetchPhotosSuccess]: (state, action) => ({
     ...state,
     photos: state.photos.concat(action.payload.photos),
@@ -27,10 +23,6 @@ export default handleActions({
     ...state,
     error: action.payload
   }),
-  [actions.fetchAlbumsRequest]: (state, action) => ({
-    ...state,
-    error: null
-  }),
   [actions.fetchAlbumsSuccess]: (state, action) => ({
     ...state,
     albums: action.payload,
@@ -39,10 +31,6 @@ export default handleActions({
   [actions.fetchAlbumsFailure]: (state, action) => ({
     ...state,
     error: action.payload
-  }),
-  [actions.fetchUsersRequest]: (state, action) => ({
-    ...state,
-    error:null
   }),
   [actions.fetchUsersSuccess]: (state, action) => ({
     ...state,
