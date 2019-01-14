@@ -10,6 +10,7 @@ const AlbumList = (props) => {
         <ListGroup>
           {props.albums.map(album => (
             <AlbumListItem
+              key={album.id}
               id={album.id}
               title={album.title}
               userId={album.userId}
