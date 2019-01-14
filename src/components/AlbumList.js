@@ -23,7 +23,7 @@ const AlbumList = (props) => {
       <div className="spinner-border text-success loading" role="status">
         <span className="sr-only">Loading...</span>
       </div>
-    </div>
+    </div>;
 };
 
 const mapStateToProps = state => ({

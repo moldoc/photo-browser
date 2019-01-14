@@ -49,28 +49,28 @@ function* watchFetchPhotosRequest() {
   yield takeEvery(
     actions.fetchPhotosRequest().type,
     fetchPhotosRequest
-  )
+  );
 }
 
 function* watchFetchAlbumsRequest() {
   yield takeEvery(
     actions.fetchAlbumsRequest().type,
     fetchAlbumsRequest
-  )
+  );
 }
 
 function* watchFetchUsersRequest() {
   yield takeEvery(
     actions.fetchUsersRequest().type,
     fetchUsersRequest
-  )
+  );
 }
 
 function* watchFetchUsersAndAlbums() {
   yield takeEvery(
     actions.fetchUsersAndAlbums().type,
     fetchUsersAndAlbums
-  )
+  );
 }
 
 export default function* rootSaga() {
