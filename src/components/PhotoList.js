@@ -17,8 +17,10 @@ class PhotoList extends Component {
         loadMore={this.onScroll}
         hasMore={this.props.pagination.next !== undefined}
         loader={
-          <div className="spinner-border text-success" role="status" key={0}>
-            <span className="sr-only">Loading...</span>
+          <div className="spinner-container">
+            <div className="spinner-border text-success" role="status" key={0}>
+              <span className="sr-only">Loading...</span>
+            </div>
           </div>
         }
       >
