@@ -19,6 +19,5 @@ it('shows a navigation bar', () => {
 });
 
 it('has two routes', () => {
-  const wrapped = shallow(<App />);
   expect(wrapped.find(Route).length).toEqual(2);
 });
