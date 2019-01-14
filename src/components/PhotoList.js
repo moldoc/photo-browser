@@ -35,7 +35,7 @@ class PhotoList extends Component {
           </div>
         </div>
       </InfiniteScroll>
-      ) :
+    ) :
       <div className="container">
         <div className="spinner-border text-success loading" role="status">
           <span className="sr-only">Loading...</span>

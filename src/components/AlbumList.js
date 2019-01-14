@@ -5,9 +5,9 @@ import { ListGroup } from 'react-bootstrap';
 
 const AlbumList = (props) => {
   return props.albums && props.albums.length ? (
-      <div className="container bg-light">
-        <div className="photo-list">
-          <ListGroup>
+    <div className="container bg-light">
+      <div className="photo-list">
+        <ListGroup>
           {props.albums.map(album => (
             <AlbumListItem
               id={album.id}
@@ -15,10 +15,10 @@ const AlbumList = (props) => {
               userId={album.userId}
             />
           ))}
-          </ListGroup>
-        </div>
+        </ListGroup>
       </div>
-    ):
+    </div>
+  ):
     <div className="container">
       <div className="spinner-border text-success loading" role="status">
         <span className="sr-only">Loading...</span>

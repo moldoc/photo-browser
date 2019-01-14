@@ -6,7 +6,7 @@ const AlbumListItem = (props) => {
   const user = props.users.find(user => user.id === props.userId).name;
   return (
     <ListGroupItem header={props.title}>By {user}</ListGroupItem>
-    );
+  );
 };
 
 const mapStateToProps = state => ({

@@ -41,6 +41,6 @@ export default handleActions({
     ...state,
     error: action.payload
   })
-  },
-  initialState
+},
+initialState
 );

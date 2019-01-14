@@ -7,13 +7,13 @@ import AlbumListView from '../views/AlbumListView';
 export default class App extends Component {
   render() {
     return (
-        <BrowserRouter>
-          <div className="bg-light">
-            <NavBar/>
-            <Route exact path="/photos" component={PhotoListView} />
-            <Route exact path="/albums" component={AlbumListView} />
-          </div>
-        </BrowserRouter>
+      <BrowserRouter>
+        <div className="bg-light">
+          <NavBar/>
+          <Route exact path="/photos" component={PhotoListView} />
+          <Route exact path="/albums" component={AlbumListView} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
